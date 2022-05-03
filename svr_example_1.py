@@ -11,7 +11,7 @@ References:
 from sklearn import svm
 
 X = [[0, 0], [2, 2]]	# data points
-y = [0.5, 2.5]			# target values	
+y = [0.5, 2.5]			  # target values	
 
 regr = svm.SVR()
 
