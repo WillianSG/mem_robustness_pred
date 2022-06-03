@@ -11,8 +11,8 @@ import pickle
 dataset = pickle.load(open('RCN_dataset.pickle', 'rb'))
 
 dataset['features'] # axis labels (metrics)
-dataset['X'] 		# 300 datapoints (13D vectors)
-dataset['Y'] 		# 300 target values (maximal connections drops)
+dataset['X'] 		# 400 datapoints (15D vectors)
+dataset['Y'] 		# 400 target values (maximal connections drops)
 ```
 
 **Features**
@@ -30,3 +30,10 @@ dataset['Y'] 		# 300 target values (maximal connections drops)
 10. **out_degree_centrality_std**: standard deviation of _out_degree_centrality_avg_.
 11. **between_centrality_avg**: average betweenness-centrality of nodes.
 12. **between_centrality_std**: standard deviation of _between_centrality_avg_.
+13. **closeness_centrality_avg**: average closeness-centrality of nodes.
+14. **closeness_centrality_std**: standard deviation of _closeness_centrality_avg_.
+
+**Observations**
+
+1. Some metrics (e.g. cliques count) are **integers** while others (e.g. in/out-degree centrality) are continuous values - normalization might be needed.
+2. Some data points (the ones with target values very low or very high) might be underrepresented - filtering might be needed.
